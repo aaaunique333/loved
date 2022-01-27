@@ -34,8 +34,8 @@ router.post('/upload',upload.single('image'),async(req,res)=>{
 
 router.get('/all-post' ,async(req,res)=>{
     try {
-        if(req.body.cat){
-            const posts=await Post.find({category:req.body.cat});
+        if(req.body.category){
+            const posts=await Post.find({category:req.body.category});
             res.status(200).json(posts);
         }else{
             const posts=await Post.find();
@@ -48,6 +48,19 @@ router.get('/all-post' ,async(req,res)=>{
     }
 });
 
+router.get('/category',async(req,res)=>{
+    if(req.body.category){
+        try {
+            const post=await Post.find({category:req.body.category});
+            res.status(200).json(post);
+            
+        } catch (error) {
+            res.status(500).json(error)
+        }
+    }else{
+        res.status(404).json("Posts are not Available !")
+    }
+})
 router.get('/post-view/:id',async(req,res)=>{
     if(req.params.id){
         try {

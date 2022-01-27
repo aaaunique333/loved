@@ -16,6 +16,7 @@ const Home = () => {
       
        const fetchData=async()=>{
            const res=await axios.get('/all-post');
+           console.log(res.data);
            setData(res.data);
        }
        fetchData();
