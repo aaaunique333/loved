@@ -1,0 +1,38 @@
+.single-view{
+    flex:8;
+    width: 100%;
+    height: 100%;
+    background-color:white;
+    padding: 15px 20px;
+}
+.single-view h1{
+    padding:20px 10px;
+}
+.single-view img{
+    width:100%;
+    height:100%;
+}
+.info{
+    font-size: 10px;
+    margin-top: -5px;
+    color: gray;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+
+}
+.single-view p{
+    text-indent: 25px;
+    line-height: 28px;
+    font-size: 20px;
+    letter-spacing:0.5px;
+    margin: 10px 0px;
+    text-align: justify;
+    font-family:fantasy;
+}
+
+@media screen and (max-width:768px){
+    .single-view{
+        flex:12;
+    }
+}

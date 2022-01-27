@@ -1,0 +1,136 @@
+.header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0px 10px;
+    height:3rem;
+    background-color:rgb(14, 199, 255);
+    box-shadow: 0px 5px 6px rgba(0,0,0,0.4);
+}
+.logo-bars{
+    float:3;
+    color: white;
+    display: flex;
+    align-items: center;
+    
+}
+.logout{
+    margin: 0px 5px;
+    color: orangered;
+    box-shadow:0px 4px 5px rgba(0,0,0,0.4);
+}
+
+.bars{
+    font-size:25px;
+    background:transparent;
+    display: none;
+    outline: none;
+    border: none;
+    color: white;
+}
+.bar{
+    display: none;
+}
+.logo{
+    width:120px;
+    height:70%;
+}
+
+
+.header-api{
+    flex:6;
+    display: flex;
+    justify-content: center;
+}
+.header-api button{
+    margin: 0 10px;
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+    background: transparent;
+    cursor: pointer;
+    border: none;
+    text-shadow: 0px 3px 3px rgba(0,0,0,0.5);
+    outline: none;
+}
+.searchinput{
+    display: flex;
+}
+.header-search{
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+}
+.header-search input{
+    padding: 7px;
+    border: none;
+    outline: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.header-search button{
+    padding: 6px 10px 8px;
+    border: none;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    background: orangered;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.sidebar{
+    display: block;
+
+}
+
+
+@media screen and (max-width:768px){
+    .header{
+        display: flex;
+        padding: 0 5px;
+        
+    }
+    .logo-bars{
+        flex: 6;
+        display: flex;
+        align-items: center;
+    }
+    .bars{
+        display: block;
+        margin-top: 5px;
+
+    }
+    .logo{
+        width:70%;
+        height:40px;
+    }
+    .searchinput{
+        display: flex;
+        align-items: center;
+    }
+
+ .header-api{
+     display: none;
+ } 
+    .header-search{
+        flex:6;
+        display:flex;
+
+    }
+    .header-search input{
+        width: 60%;
+        margin: 5px;
+    }
+ 
+    .header-search button{
+        font-size:20px;
+        padding: 5px 10px;
+        margin: 5px -10px;
+        display: flex;
+        align-items: center;
+    }
+}

@@ -1,0 +1,10 @@
+.control{
+    width: 400px;
+    height:100vh;
+    padding: 20px;
+    margin: 100px auto;
+}
+.control button{
+    background:linear-gradient(to right ,red,orange);
+    margin: 10px;
+}

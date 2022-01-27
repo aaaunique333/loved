@@ -1,0 +1,11 @@
+.sidebar{
+    display: none;
+    padding: 10px 0px;
+    width: 40px;
+}
+@media screen and (max-width:768px){
+    .sidebar{
+        display: block;
+        padding: 10px;
+    }
+}

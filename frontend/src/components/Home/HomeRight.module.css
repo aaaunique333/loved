@@ -1,0 +1,26 @@
+.home-right{
+    flex:3;
+    width: 100%;
+    padding: 10px 10px;
+    
+
+}
+
+.home-right ul li{
+    list-style:square;
+    margin: 10px 0px;
+}
+.home-right ul li a{
+    color: brown;
+    font-size:18px;
+
+}
+
+@media screen and (max-width:768px){
+  .home-right{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+  }
+}

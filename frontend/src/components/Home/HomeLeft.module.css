@@ -1,0 +1,40 @@
+.home-left{
+    flex:2;
+
+}
+
+.home-left ul{
+    list-style: none;
+    font-weight: bold;
+    font-size: 20px;
+    color:maroon;
+}
+.home-left ul li{
+    margin: 10px 0px;
+}
+.home-left ul li button{
+    background: transparent;
+    color: inherit;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+.home-left ul li a{
+    text-decoration: none;
+    color: inherit;
+}
+.home-left ul li a:hover{
+    color: orangered;
+}
+a:active{
+    color:orangered;
+}
+@media screen and (max-width:768px){
+    .home-left{
+        width: 100%;
+    }
+    .home-left ul li{
+        text-align: center;
+    }
+}
