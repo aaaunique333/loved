@@ -3,15 +3,12 @@ import React from 'react'
 import {  NavLink } from 'react-router-dom'
 import axios from 'axios'
 import { useDispatch } from 'react-redux'
-import {post} from '../../Actions/post'
+import { category } from '../../Actions/post'
 const HomeLeft = () => {
      const dispatch = useDispatch();
-    const onCategoryHandler=async(category)=>{
+     const onCategoryHandler=async(cat)=>{
        const res=await axios.get("/all-post");
-        const data=res.data;
-        dispatch(post(data,category));
-        console.log(data,category);
-        
+        dispatch(category(res.data,cat));
     }
     return (
         <div className={classes['home-left']}>

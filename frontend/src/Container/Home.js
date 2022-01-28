@@ -5,19 +5,22 @@ import HomeRight from '../components/Home/HomeRight'
 import Post from '../components/Post/Post'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import axios from 'axios'
+import { useDispatch, useSelector } from 'react-redux'
+import { post } from '../Actions/post'
 const Home = () => {
     const [show ,setShow]=useState(window.innerWidth >=768);
-    const [data,setData]=useState([]);
+    const data=useSelector(state=>state.postReducer);
+    const dispatch=useDispatch();
    
    const onLeftbarHander=()=>{
        setShow(!show);
    };
+   
    useEffect(()=>{
       
        const fetchData=async()=>{
            const res=await axios.get('/all-post');
-           console.log(res.data);
-           setData(res.data);
+           dispatch(post(res.data));
        }
        fetchData();
    },[])
