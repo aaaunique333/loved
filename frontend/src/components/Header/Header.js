@@ -5,6 +5,7 @@ import Menu from './Menu';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../../Actions/login';
+import { post } from '../../Actions/post';
 
 const Header = () => {
     const dispath=useDispatch();
@@ -42,6 +43,7 @@ const Header = () => {
 export default Header
 
 export const ApiCall=()=>{
+  
     return(
            <div className={classes['header-api']}>
                 <button>All</button>
