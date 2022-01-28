@@ -2,6 +2,7 @@ import classes from './CreatePost.module.css'
 import React, { useRef, useState } from 'react'
 import { FaPlus } from 'react-icons/fa'
 import Button from '../../components/Layout/Button'
+import axios from 'axios'
 
 const CreatePost = () => {
   const titleRef=useRef();
@@ -9,13 +10,30 @@ const CreatePost = () => {
  const [category,setDesc]=useState('');
   const descRef=useRef();
 
-  const onSubmitHandler=(event)=>{
+  const onSubmitHandler=async(event)=>{
     event.preventDefault();
     const title=titleRef.current.value;
     const image=imageRef.current.value;
     const desc=descRef.current.value;
-    console.log(title,image,desc,category);
 
+    const res=await axios({
+        method:"POST",
+        url:"/upload",
+        data:{
+            title:"title",
+            desc:"desc",
+            image:image,
+            category:"category"
+        },
+        headers: {
+            'Content-Type': 'multipart/form-data'
+        }
+    });
+
+
+    console.log(res.data);
+
+    alert("done")
   }
     return (
         <form className={classes['create-post']} onSubmit={onSubmitHandler}>
@@ -30,8 +48,8 @@ const CreatePost = () => {
             <div className={classes.category}>
                 <label htmlFor="category">Category:</label>
                <select value={category} onChange={(e)=>setDesc(e.target.value)}>
-                   <option value="html">Html</option>
-                   <option value="css">Css</option>
+                   <option  value="html">Html</option>
+                   <option  value="css">Css</option>
                    <option value="js">JS</option>
                </select>
             </div>
