@@ -20,14 +20,9 @@ const CreatePost = () => {
         method:"POST",
         url:"/upload",
         data:{
-            title:"title",
-            desc:"desc",
-            image:image,
-            category:"category"
+            title,desc,category
         },
-        headers: {
-            'Content-Type': 'multipart/form-data'
-        }
+     
     });
 
 

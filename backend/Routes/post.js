@@ -100,4 +100,12 @@ router.put('/update/:id',async(req,res)=>{
         res.status(500).json(error);
     }
 })
+
+router.get('/search',async(req,res)=>{
+    try {
+        res.status(200).json("Hello");
+    } catch (error) {
+        res.status(500).json(error);
+    }
+})
 module.exports=router;
