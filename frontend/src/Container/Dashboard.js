@@ -9,14 +9,14 @@ const Dashboard = () => {
     return (
         <>
         {data.map((item)=>{
-            const {image,title}=item;
+            const {image,title ,_id}=item;
             return(
                 <div className={classes.dashboard}>
                 <img src={image} alt=""/>
                 <div className={classes['dash-control']}>
                     <h3>{title}</h3>
                     <div className={classes.button}>
-                        <Button><Link to="/update" >Edit</Link></Button>
+                        <Button><Link to={`/update/${_id}`} >Edit</Link></Button>
                         <Button>Delete</Button>
                     </div>
                 </div>

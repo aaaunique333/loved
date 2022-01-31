@@ -38,7 +38,7 @@ function App() {
                 <Route path="/dashboard">
                    {isLogged ? <Dashboard /> : <Home />}
                 </Route>
-                <Route path="/update">
+                <Route path="/update/:id">
                    {isLogged ?  <Update /> :<Home />}
                 </Route>
                 <Route path="/control">
