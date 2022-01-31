@@ -73,5 +73,31 @@ router.get('/post-view/:id',async(req,res)=>{
         res.status(404).json("User Does not exist !")
     }
 })
+router.delete('/remove/:id',async(req,res)=>{
+    try {
+       const deletePost=await Post.findByIdAndDelete(req.params.id);
+       res.status(200).json(deletePost);
+    } catch (error) {
+        res.status(500).json(error);
+    }
+})
 
+router.put('/update/:id',async(req,res)=>{
+    try {
+        const updateUser=await Post.findByIdAndUpdate(
+            req.params.id,
+            {
+                $set:req.body
+            },
+            {
+                new:true
+            }
+        );
+
+        res.status(200).json(updateUser);
+        
+    } catch (error) {
+        res.status(500).json(error);
+    }
+})
 module.exports=router;
